@@ -1,44 +1,34 @@
-{%- comment -%}
-  Include vars:
-	title
-  subtitle
-	photo
-	photo-alt
-	auto-header
-	content
-{%- endcomment -%}
-
 {%- assign _title = include.title | default: 'Untitled' -%}
 {%- assign _slug = include.title | strip_html | slugify | default: 'untitled' -%}
 
 {%- if include.photo and include.photo-alt -%}
-	{%- capture _photo -%}
-		<img src="{{- include.photo | relative_url -}}" alt="{{- include.photo-alt -}}" class="back">
-	{%- endcapture -%}
-	{%- assign _class = 'shade-one cover dark' -%}
+  {%- capture _photo -%}
+    <img src="{{- include.photo | relative_url -}}" alt="{{- include.photo-alt | escape -}}" class="back" loading="lazy">
+  {%- endcapture -%}
+  {%- assign _class = 'shade-one cover dark' -%}
 {%- else -%}
-	{%- assign _photo = '' -%}
-	{%- capture _class -%}shade-{%- cycle 'two', 'three', 'four', 'three' -%}{%- endcapture -%}
+  {%- assign _photo = '' -%}
+  {%- assign _class = include.bg-class | default: 'shade-two' -%}
 {%- endif -%}
 
 {%- if include.auto-header == 'none' -%}
-	{%- assign _heading = "" -%}
+  {%- assign _heading = "" -%}
 {%- else -%}
-	{%- capture _heading -%}
-		<header>
-			<h2>
+  {%- capture _heading -%}
+    <header>
+      <h2>
         {%- if include.auto-header == null or include.auto-header == 'use-title' -%}
-          {{- _title -}}
+          {{- _title | escape -}}
         {%- else -%}
-          {{- include.auto-header -}}
+          {{- include.auto-header | escape -}}
         {%- endif -%}
       </h2>
-      {%- if include.subtitle -%}<p>{{- include.subtitle -}}</p>{%- endif -%}
-		</header>
-	{%- endcapture -%}
+      {%- if include.subtitle -%}<p>{{- include.subtitle | escape -}}</p>{%- endif -%}
+    </header>
+  {%- endcapture -%}
 {%- endif -%}
 
-<section id="{{- _slug -}}" class="{{- _class -}}">
+<section id="{{- _slug -}}" class="{{- _class -}}" aria-label="{{- _title | escape -}}">
   <div class="container">
     {{- _photo -}}
     {{- _heading -}}
