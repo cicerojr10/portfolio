@@ -1,0 +1,46 @@
+---
+layout: home
+title: "Cícero Quintino Junior"
+subtitle: "Ciência de Dados | IA | Machine Learning | Back-end Developer"
+---
+
+{% include section.html
+   title="Sobre Mim"
+   subtitle="Ciência de Dados, IA, Machine Learning e Back-end"
+   photo="/assets/images/avatar.jpg"
+   photo-alt="Foto de Cícero"
+   content='
+     <p>Sou <strong>Cícero Quintino Junior</strong>, apaixonado por tecnologia, ciência de dados e soluções de back-end. Trabalho com Python, R, SQL e sou entusiasta de IA e Machine Learning.</p>
+     <ul>
+       <li>Formação: Engenharia, Ciência de Dados</li>
+       <li>Experiência: Projetos de análise de dados, automação e APIs</li>
+       <li>Skills: Python, R, SQL, Machine Learning, Docker, Linux</li>
+     </ul>
+   '
+%}
+
+{% include section.html
+   title="Contato"
+   subtitle="Fale comigo"
+   content='
+     <ul>
+       <li>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+       <li>LinkedIn: <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">Meu LinkedIn</a></li>
+       <li>GitHub: <a href="{{ site.github_url }}" target="_blank" rel="noopener">{{ site.github_url }}</a></li>
+     </ul>
+   '
+%}
+
+{% include section.html
+   title="Projetos Recentes"
+   subtitle="Veja alguns dos meus projetos em destaque"
+   content='
+     <ul>
+       <li><a href="https://github.com/cicerojr10/projeto-exemplo1" target="_blank" rel="noopener">Projeto Exemplo 1</a> – Análise de dados com Python</li>
+       <li><a href="https://github.com/cicerojr10/projeto-exemplo2" target="_blank" rel="noopener">Projeto Exemplo 2</a> – API RESTful para Machine Learning</li>
+     </ul>
+   '
+%}
+
+<!-- Ícones sociais no rodapé da home -->
+{% include social_icons.html %}
