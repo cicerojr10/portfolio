@@ -1,24 +1,26 @@
 ---
 title: Contato
-icon: fa-envelope
 order: 4
+icon: fa-envelope
+auto-header: use-title
 ---
 
-<p>Quer falar comigo? Estou aberto a novas oportunidades, projetos e conexões. Preencha o formulário abaixo ou envie um e-mail direto quando preferir.</p>
-
-<form method="post" action="https://formspree.io/{{ site.email }}">
-  <div class="row">
-    <div class="6u 12u$(mobile)">
-      <input type="text" name="name" placeholder="Seu nome" required />
-    </div>
-    <div class="6u$ 12u$(mobile)">
-      <input type="email" name="email" placeholder="Seu e-mail" required />
-    </div>
-    <div class="12u$">
-      <textarea name="message" placeholder="Sua mensagem" required></textarea>
-    </div>
-    <div class="12u$">
-      <input type="submit" value="Enviar mensagem" />
-    </div>
-  </div>
-</form>
+<section>
+  <p>Entre em contato para parcerias, oportunidades ou dúvidas!</p>
+  <ul>
+    <li><b>Email:</b> <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+    <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/cicerojr-techprofessional/" target="_blank">Acesse meu perfil</a></li>
+    <li><b>GitHub:</b> <a href="https://github.com/cicerojr10" target="_blank">github.com/cicerojr10</a></li>
+  </ul>
+  <p>Ou utilize o formulário abaixo:</p>
+  <form action="https://formspree.io/f/meuqrcode" method="POST">
+    <label>Nome: <input type="text" name="name" required></label><br>
+    <label>Email: <input type="email" name="email" required></label><br>
+    <label>Mensagem: <textarea name="message" required></textarea></label><br>
+    <button type="submit">Enviar</button>
+  </form>
+  <hr>
+  <p>
+    Dúvidas ou sugestões? Entre em contato via <a href="https://www.linkedin.com/in/cicerojr-techprofessional/" target="_blank">LinkedIn</a> ou abra uma issue!
+  </p>
+</section>
