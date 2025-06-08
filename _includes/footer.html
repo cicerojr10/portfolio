@@ -1,6 +1,13 @@
 <!-- Footer -->
 <div id="footer">
-  
+
+  {% if site.avatar %}
+    <div class="footer-avatar" style="text-align:center; margin-bottom: 10px;">
+      <img src="{{ site.avatar | relative_url }}" alt="{{ site.author | default: 'Avatar' }}" style="width: 80px; height: 80px; border-radius: 50%;">
+      {% if site.author %}<div>{{ site.author }}</div>{% endif %}
+    </div>
+  {% endif %}
+
   <!-- Copyright -->
   <ul class="copyright">
     {% if site.title or site.author %}
