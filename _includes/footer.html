@@ -1,6 +1,7 @@
 <!-- Footer -->
 <div id="footer">
-
+  
+ <img src="{{ site.avatar | relative_url }}" alt="Avatar" style="width:80px; height:80px; border-radius:50%; display:block; margin:0 auto 1rem auto;">
   {% if site.avatar %}
     <div class="footer-avatar" style="text-align:center; margin-bottom: 10px;">
       <img src="{{ site.avatar | relative_url }}" alt="{{ site.author | default: 'Avatar' }}" style="width: 80px; height: 80px; border-radius: 50%;">
