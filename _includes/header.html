@@ -6,7 +6,9 @@
 <!-- Header -->
 <div id="header">
   <div class="top">
-    {%- include logo.html -%}
+    <a href="{{ site.baseurl }}/">
+      <img src="{{ site.logo }}" alt="{{ site.title }}" style="height:40px;">
+    </a>
     {%- include nav.html section_items=include.scrolly_nav -%}
   </div>
   <div class="bottom">
