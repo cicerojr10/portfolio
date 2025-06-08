@@ -30,7 +30,7 @@ collections:
     output: true
 
 # Tema do Jekyll
-theme: jekyll-theme-prologue
+theme: minima
 
 # SEO/opengraph (opcional, melhora preview em redes sociais)
 defaults:
