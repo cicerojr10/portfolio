@@ -4,7 +4,7 @@ description: >
   Portfólio de Cícero Quintino Junior, profissional apaixonado por Data Science, Inteligência Artificial e Desenvolvimento Back-end com Java e Python.
 author: "Cícero Quintino Junior"
 email: "cicerojr10@gmail.com"
-avatar: "assets/images/avatar.jpg"
+avatar: "/assets/images/avatar.png"
 logo: "/assets/images/logo.svg"
 
 lang: "pt-BR"
