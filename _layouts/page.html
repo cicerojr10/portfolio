@@ -2,15 +2,14 @@
 layout: default
 ---
 
-<section class="home">
-  {% include sidebar.html %}
+<article class="page">
   <header>
-    <h1>{{ site.title | escape }}</h1>
-    {%- if site.subtitle -%}
-      <p class="subtitle">{{ site.subtitle | escape }}</p>
+    <h1>{{ page.title | escape }}</h1>
+    {%- if page.subtitle -%}
+      <p class="subtitle">{{ page.subtitle | escape }}</p>
     {%- endif -%}
   </header>
   <section>
     {{ content }}
   </section>
-</section>
+</article>
