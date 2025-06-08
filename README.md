@@ -20,3 +20,8 @@ Aqui você encontra minhas experiências, projetos, habilidades e formas de cont
 3. Faça push para o GitHub e publique pelo GitHub Pages!
 
 ## 📂 Estrutura
+
+
+## 📧 Contato
+
+Dúvidas ou sugestões? Entre em contato via [LinkedIn](https://www.linkedin.com/in/cicerojr-techprofessional/) ou abra uma issue!
