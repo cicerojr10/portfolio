@@ -2,15 +2,21 @@
 layout: default
 ---
 
-<section class="home">
-  {% include sidebar.html %}
+<article class="post">
   <header>
-    <h1>{{ site.title | escape }}</h1>
-    {%- if site.subtitle -%}
-      <p class="subtitle">{{ site.subtitle | escape }}</p>
+    <h1>{{ page.title | escape }}</h1>
+    <p class="meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d/%m/%Y" }}</time>
+      {%- if page.author or site.author -%} • <span class="author">{{ page.author | default: site.author | escape }}</span>{%- endif -%}
+    </p>
+    {%- if page.subtitle -%}
+      <p class="subtitle">{{ page.subtitle | escape }}</p>
     {%- endif -%}
   </header>
   <section>
     {{ content }}
   </section>
-</section>
+  <footer>
+    {% include social_icons.html %}
+  </footer>
+</article>
