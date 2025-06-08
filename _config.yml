@@ -5,6 +5,7 @@ description: >
 author: "Cícero Quintino Junior"
 email: "cicerojr10@gmail.com"
 avatar: "assets/images/avatar.jpg"
+logo: "/assets/images/logo.svg"
 
 lang: "pt-BR"
 baseurl: "" # Para domínio próprio, deixe vazio
