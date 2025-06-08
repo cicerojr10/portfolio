@@ -10,7 +10,7 @@ logo: "/assets/images/logo.svg"
 lang: "pt-BR"
 baseurl: "" # Para domínio próprio, deixe vazio
 url: "https://cicerojrtechprofessional.software" # Inclua o protocolo https!
-favicon: "/assets/images/favicon.ico" # Se tiver favicon, coloque o caminho
+favicon: "/assets/images/logo.svg" # Se tiver favicon, coloque o caminho
 
 # Social links padronizados (para facilitar chamadas no layout)
 social:
