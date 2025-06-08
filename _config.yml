@@ -31,17 +31,17 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Cícero Quintino Junior
-subtitle: Ciência de Dados, IA e Desenvolvimento Back-end
+subtitle: Ciência de Dados | IA | Machine Learning | Back-end Developer
 description: >- # this means to ignore newlines until "baseurl:"
   Portfólio de Cícero Quintino Junior, profissional em transição e desenvolvimento contínuo
-com foco em Data Science, Inteligência Artificial e Desenvolvimento Back-end.
+com foco em Data Science, Inteligência Artificial e Desenvolvimento Back-end com Java e Python.
 author: Cícero Quintino Junior
 email: cicerojr10@gmail.com
 avatar: assets/images/avatar.jpg
 
 # You'll want to customize url and baseurl for your own site:
 baseurl: "/jekyll-theme-prologue" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+url: "cicerojrtechprofessional.software" # the base hostname & protocol for your site
 
 # Social settings
 # Make sure to include the full url including protocol, e.g. https://github.com/chrisbobbe
