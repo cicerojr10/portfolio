@@ -4,10 +4,12 @@
   <!-- Copyright -->
   <ul class="copyright">
     {% if site.title or site.author %}
-      <li>&copy; {{- site.title | default: site.author -}}. All rights reserved.</li>
+      <li>&copy; {{ site.title | default: site.author }}. Todos os direitos reservados.</li>
     {% endif %}
-    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-    <li>Jekyll integration: <a href="https://chrisbobbe.github.io/">Chris Bobbe</a></li>
+    <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+    <li>Jekyll integration: <a href="https://chrisbobbe.github.io/" target="_blank">Chris Bobbe</a></li>
+    {% if site.email %}
+      <li><a href="mailto:{{ site.email }}">Contato</a></li>
+    {% endif %}
   </ul>
-  
 </div>
