@@ -32,6 +32,9 @@ collections:
 # Tema do Jekyll
 theme: minima
 
+# Google Analytics (tema minima)
+google_analytics: G-NTEQ4DX884
+
 # SEO/opengraph (opcional, melhora preview em redes sociais)
 defaults:
   -
