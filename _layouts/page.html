@@ -1,18 +1,15 @@
 ---
 layout: default
 ---
-{%- include header.html -%}
 
-<!-- Main -->
-<div id="main">
-	<!-- Page -->
-	<article class="shade-two">
-	  <div class="container">
-			<header>
-				<h2>{{- page.title -}}</h2>
-				{%- if page.subtitle -%}<p>{{- page.subtitle -}}</p>{%- endif -%}
-			</header>
-	    {{- content -}}
-	  </div>
-	</article>
-</div>
+<article class="page">
+  <header>
+    <h1>{{ page.title | escape }}</h1>
+    {%- if page.subtitle -%}
+      <p class="subtitle">{{ page.subtitle | escape }}</p>
+    {%- endif -%}
+  </header>
+  <section>
+    {{ content }}
+  </section>
+</article>
