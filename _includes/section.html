@@ -1,37 +1,11 @@
 {%- assign _title = include.title | default: 'Untitled' -%}
-{%- assign _slug = include.title | strip_html | slugify | default: 'untitled' -%}
-
-{%- if include.photo and include.photo-alt -%}
-  {%- capture _photo -%}
-    <img src="{{- include.photo | relative_url -}}" alt="{{- include.photo-alt | escape -}}" class="back" loading="lazy">
-  {%- endcapture -%}
-  {%- assign _class = 'shade-one cover dark' -%}
-{%- else -%}
-  {%- assign _photo = '' -%}
-  {%- assign _class = include.bg-class | default: 'shade-two' -%}
-{%- endif -%}
-
-{%- if include.auto-header == 'none' -%}
-  {%- assign _heading = "" -%}
-{%- else -%}
-  {%- capture _heading -%}
-    <header>
-      <h2>
-        {%- if include.auto-header == null or include.auto-header == 'use-title' -%}
-          {{- _title | escape -}}
-        {%- else -%}
-          {{- include.auto-header | escape -}}
-        {%- endif -%}
-      </h2>
-      {%- if include.subtitle -%}<p>{{- include.subtitle | escape -}}</p>{%- endif -%}
-    </header>
-  {%- endcapture -%}
-{%- endif -%}
-
-<section id="{{- _slug -}}" class="{{- _class -}}" aria-label="{{- _title | escape -}}">
+{%- assign _slug = _title | strip_html | slugify | default: 'untitled' -%}
+<section id="{{ _slug }}">
   <div class="container">
-    {{- _photo -}}
-    {{- _heading -}}
-    {{- include.content -}}
+    <header>
+      <h2>{{ _title }}</h2>
+      {% if include.subtitle %}<p>{{ include.subtitle }}</p>{% endif %}
+    </header>
+    {{ include.content }}
   </div>
 </section>
