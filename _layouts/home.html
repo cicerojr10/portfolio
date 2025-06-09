@@ -1,16 +1,20 @@
----
-layout: default
----
-
-<section class="home">
-  {% include nav.html %}
-  <header>
-    <h1>{{ site.title | escape }}</h1>
-    {%- if site.subtitle -%}
-      <p class="subtitle">{{ site.subtitle | escape }}</p>
-    {%- endif -%}
-  </header>
-  <section>
-    {{ content }}
-  </section>
-</section>
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+  <head>
+    {%- include head.html -%}
+  </head>
+  <body>
+    <div id="wrapper">
+      {%- include header.html -%}
+      <main id="main">
+        {{ content }}
+      </main>
+      {%- include footer.html -%}
+    </div>
+    <!-- Scripts essenciais para scrollspy -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+    <script src="{{ '/assets/js/jquery.scrolly.min.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/jquery.scrollzer.min.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  </body>
+</html>
