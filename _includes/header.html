@@ -1,17 +1,13 @@
-{%- comment -%}
-  Include vars:
-  scrolly_nav
-{%- endcomment -%}
-
 <!-- Header -->
-<div id="header">
+<header id="header">
   <div class="top">
     <a href="{{ site.baseurl }}/">
       <img src="{{ site.logo }}" alt="{{ site.title }}" style="height:40px;">
     </a>
-    {%- include nav.html section_items=include.scrolly_nav -%}
+    {% assign sorted_sections = site.sections | sort: "order" %}
+    {% include nav.html section_items=sorted_sections %}
   </div>
   <div class="bottom">
-    {%- include social_icons.html -%}
+    {% include social_icons.html %}
   </div>
-</div>
+</header>
