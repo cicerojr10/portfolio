@@ -8,37 +8,31 @@ avatar: "/assets/images/avatar.png"
 logo: "/assets/images/logo.svg"
 
 lang: "pt-BR"
-baseurl: "" # Para domínio próprio, deixe vazio
-url: "https://cicerojrtechprofessional.software" # Inclua o protocolo https!
-favicon: "/assets/images/logo.svg" # Se tiver favicon, coloque o caminho
+baseurl: ""
+url: "https://cicerojrtechprofessional.software"
+favicon: "/assets/images/logo.svg"
 
-# Social links padronizados (para facilitar chamadas no layout)
 social:
   instagram: "https://www.instagram.com/ciceroqjunior"
   linkedin: "https://www.linkedin.com/in/cicerojr-techprofessional/"
   github: "https://github.com/cicerojr10"
 
-# Plugins recomendados para SEO e sitemap
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
 
-# Coleções personalizadas
 collections:
   sections:
     output: true
 
-# Tema do Jekyll
 theme: minima
 
-# Google Analytics (tema minima)
 google_analytics: G-NTEQ4DX884
 
-# SEO/opengraph (opcional, melhora preview em redes sociais)
 defaults:
   -
     scope:
       path: ""
     values:
-      image: "assets/images/banner.jpg" # banner para preview social
+      image: "/assets/images/banner.jpg"
