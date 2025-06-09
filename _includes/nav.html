@@ -1,15 +1,12 @@
 <!-- Nav -->
 <nav id="nav">
   <ul>
-    {%- assign sections = site.sections | sort: 'order' -%}
-    {%- for section in sections -%}
+    {%- for section in include.section_items -%}
       {%- assign _title = section.title | default: section.layout | default: 'Untitled' -%}
       {%- assign _slug = _title | slugify -%}
       {%- assign _icon = section.icon | default: 'fa-file' -%}
-      {%- assign _class = 
-            section.icon-style == 'regular'  ? 'icon-r' : 
-            section.icon-style == 'brands'   ? 'icon-b' : 
-                                               'icon' -%}
+      {%- assign _class = section.icon-style == 'regular'  ? 'icon-r' :
+                          section.icon-style == 'brands'   ? 'icon-b' : 'icon' -%}
       <li>
         <a href="#{{ _slug }}" id="{{ _slug }}-link" class="scrolly">
           <span class="{{ _class }} {{ _icon }}">{{ _title }}</span>
