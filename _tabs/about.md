@@ -1,8 +1,12 @@
 ---
-# the default layout is 'page'
-icon: fas fa-info-circle
-order: 4
+title: Sobre
+icon: fas fa-user
+order: 1
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+Olá, sou **Cícero Quintino Junior**!  
+Sou apaixonado por Ciência de Dados, Inteligência Artificial e Desenvolvimento Back-end com Java e Python.
+
+- **E-mail:** cicerojr10@gmail.com
+- **LinkedIn:** [cicerojr-techprofessional](https://www.linkedin.com/in/cicerojr-techprofessional/)
+- **Instagram:** [@ciceroqjunior](https://www.instagram.com/ciceroqjunior)
