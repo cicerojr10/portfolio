@@ -33,7 +33,7 @@ nav:
     url: /about/
   - name: Projects
     url: /projects/
-  - name: Blog
-    url: /posts/
+  - name: Skills
+    url: /skills/
   - name: Contact
     url: /contact/
