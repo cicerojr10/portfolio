@@ -21,7 +21,13 @@ jobs:
         run: bundle install
 
       - name: Build site
-        run: bundle exec jekyll build
+        run: |
+          bundle exec jekyll build --destination ./_site
+        env:
+          JEKYLL_ENV: production # É uma boa prática definir isso para builds de produção
+
+      - name: List _site content # Este passo é para debug e pode ser removido depois que funcionar
+        run: ls -la ./_site # Lista o conteúdo da pasta _site
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
