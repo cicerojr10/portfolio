@@ -2,6 +2,9 @@
 
 source "https://rubygems.org"
 
+# Adicione esta linha para incluir o tema Chirpy
+gem "jekyll-theme-chirpy" # Você pode especificar uma versão, ex: "~> 6.3"
+
 gem "jekyll", "~> 4.2"
 gem "jekyll-sass-converter", ">= 2.0"
 gem "webrick", "~> 1.7"
