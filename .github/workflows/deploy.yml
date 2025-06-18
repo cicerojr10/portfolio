@@ -14,6 +14,8 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
+      - name: Gera sitemap.xml
+        run: npm run generate:sitemap
       - run: npm run build
       - run: touch dist/.nojekyll
       - name: Deploy
