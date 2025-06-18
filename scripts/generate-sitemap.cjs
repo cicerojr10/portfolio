@@ -6,19 +6,26 @@ const hostname = 'https://www.cicerojrtechprofessional.software';
 const links = [
   { url: '/', changefreq: 'monthly', priority: 1.0 },
   { url: '/about', changefreq: 'monthly', priority: 0.8 },
-  // Adicione mais rotas do seu site conforme necessário.
+  // Adicione outras rotas do seu site aqui conforme necessário
 ];
 
-const sitemap = new SitemapStream({ hostname });
-const writeStream = createWriteStream('./public/sitemap.xml');
+async function generate() {
+  const sitemap = new SitemapStream({ hostname });
+  const writeStream = createWriteStream('./public/sitemap.xml');
 
-streamToPromise(
-  sitemap
-    .pipe(writeStream)
-    .on('finish', () => {
-      console.log('sitemap.xml gerado!');
-    })
-);
+  sitemap.pipe(writeStream);
 
-links.forEach(link => sitemap.write(link));
-sitemap.end();
+  for (const link of links) {
+    sitemap.write(link);
+  }
+  sitemap.end();
+
+  await streamToPromise(sitemap); // aguarda o fim da escrita
+
+  console.log('sitemap.xml gerado com sucesso!');
+}
+
+generate().catch((err) => {
+  console.error('Erro ao gerar o sitemap:', err);
+  process.exit(1);
+});
