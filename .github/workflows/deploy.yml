@@ -16,7 +16,15 @@ jobs:
       - run: npm ci
       - name: Gera sitemap.xml
         run: npm run generate:sitemap
-      - run: npm run build
+
+      # Alteração principal está neste passo
+      - name: Build site
+        run: npm run build
+        env: # <-- BLOCO ADICIONADO
+          VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
+          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
+          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
+
       - run: touch dist/.nojekyll
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
