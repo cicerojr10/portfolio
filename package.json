@@ -13,6 +13,7 @@
     "generate:sitemap": "node scripts/generate-sitemap.cjs"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@radix-ui/react-toast": "^1.2.14",
     "@tailwindcss/vite": "^4.1.10",
     "class-variance-authority": "^0.7.1",

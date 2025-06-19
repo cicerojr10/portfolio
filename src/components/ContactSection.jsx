@@ -1,14 +1,11 @@
-import {
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Send,
-} from "lucide-react";
+import { useRef } from "react"; // 1. Adicionado useRef
+import emailjs from "@emailjs/browser"; // 2. Adicionado a biblioteca do EmailJS
+import { Instagram, Linkedin, Mail, MapPin, Send } from "lucide-react";
 import { cn } from "../lib/utils";
 import { useToast } from "../hooks/use-toast";
 import { useState, useEffect } from "react";
 
+// Nenhuma alteração necessária neste componente auxiliar.
 function EmailLink() {
   const [email, setEmail] = useState("");
 
@@ -36,25 +33,42 @@ function EmailLink() {
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const form = useRef(); // 3. Criada a referência para o formulário
 
+  // 4. Função handleSubmit foi COMPLETAMENTE SUBSTITUÍDA pela lógica do EmailJS
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const formData = new FormData(e.target);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const message = formData.get("message");
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    console.log({ name, email, message });
-
-    setTimeout(() => {
-      toast({
-        title: "Mensagem Enviada!",
-        description: "Obrigado pela mensagem. Retornarei em breve!",
+    emailjs
+      .sendForm(serviceID, templateID, form.current, publicKey)
+      .then(
+        (result) => {
+          console.log("EmailJS SUCCESS!", result.text);
+          toast({
+            title: "Mensagem Enviada!",
+            description: "Obrigado pela mensagem. Retornarei em breve!",
+          });
+          form.current.reset(); // Limpa o formulário
+        },
+        (error) => {
+          console.log("EmailJS FAILED...", error.text);
+          toast({
+            variant: "destructive",
+            title: "Uh oh! Algo deu errado.",
+            description:
+              "Houve um problema ao enviar a sua mensagem. Por favor, tente novamente.",
+          });
+        }
+      )
+      .finally(() => {
+        // Garante que o botão seja reativado após o sucesso ou falha
+        setIsSubmitting(false);
       });
-      setIsSubmitting(false);
-    }, 1500);
   };
 
   return (
@@ -72,7 +86,9 @@ export const ContactSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold mb-6">Informações de Contato</h3>
+            <h3 className="text-2xl font-semibold mb-6">
+              Informações de Contato
+            </h3>
 
             <div className="space-y-6 justify-center">
               <div className="flex items-start space-x-4">
@@ -123,7 +139,8 @@ export const ContactSection = () => {
           <div className="bg-card p-8 rounded-lg shadow-xs">
             <h3 className="text-2xl font-semibold mb-6">Envie uma Mensagem</h3>
 
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            {/* 5. Adicionado ref={form} ao formulário */}
+            <form ref={form} className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
@@ -138,6 +155,7 @@ export const ContactSection = () => {
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="Seu nome..."
+                  disabled={isSubmitting} // Desativa o campo durante o envio
                 />
               </div>
 
@@ -155,6 +173,7 @@ export const ContactSection = () => {
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="seuemail@email.com"
+                  disabled={isSubmitting} // Desativa o campo durante o envio
                 />
               </div>
 
@@ -169,8 +188,10 @@ export const ContactSection = () => {
                   id="message"
                   name="message"
                   required
+                  rows={4} // Aumentar um pouco a altura padrão
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                   placeholder="Olá, gostaria de conversar sobre..."
+                  disabled={isSubmitting} // Desativa o campo durante o envio
                 />
               </div>
 
