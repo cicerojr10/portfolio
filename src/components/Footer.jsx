@@ -7,7 +7,7 @@ export const Footer = () => {
             {" "}
             <p className="text-sm text-muted-foreground">
                 {" "}
-                &copy; {new Date().getFullYear()} Cicero Junior, Todos os direitos reservados.
+                &copy; {new Date().getFullYear()} Cícero Quintino Junior, Todos os direitos reservados.
             </p>
             <a
                 href="#hero"
