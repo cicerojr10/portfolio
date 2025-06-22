@@ -1,19 +1,29 @@
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { NotFound } from "./pages/NotFound";
 import { Home } from "./pages/Home";
+import Curriculo from "./pages/Curriculo";
 import { Toaster } from "./components/ui/toaster";
+import { ThemeProvider } from "./context/ThemeContext";
+import './i18n';
 
 function App() {
   return (
-    <>
-    <Toaster />
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
-    </>
+    <ThemeProvider>
+      <Toaster />
+      <BrowserRouter>
+        <Routes>
+          {/* Rota padrão da home */}
+          <Route index element={<Home />} />
+
+          {/* Rota do currículo */}
+          <Route path="/curriculo" element={<Curriculo />} />
+
+          {/* Rota para páginas não encontradas */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
