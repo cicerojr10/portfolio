@@ -37,7 +37,7 @@ const projects = [
         image: "/projects/Projeto4.png",
         tags: ["Machine Learning", "Neural Networks", "Deep Learning", "Python", "TensorFlow", "Keras"],
         githubUrl: "https://github.com/cicerojr10/redeNeuralML",
-        liveUrl: null,
+        liveUrl: "https://redeneuralml.streamlit.app",
     },
 ];
 
