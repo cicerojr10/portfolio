@@ -1,6 +1,5 @@
 import React, { Suspense } from "react";
 import { ThemeToggle } from "../components/ThemeToggle";
-import { StarBackground } from "../components/StarBackground";
 import { Navbar } from "../components/Navbar";
 import { HeroSection } from "../components/HeroSection";
 import { Footer } from "../components/Footer";
@@ -24,8 +23,6 @@ export const Home = () => {
 
             {/* Theme Toggle */}
             <ThemeToggle />
-            {/* Background Effects */}
-            <StarBackground />
             {/* Navbar */}
             <Navbar />
             {/* Main Content */}
