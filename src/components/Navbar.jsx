@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import { cn } from "../lib/utils";
 import { Menu, X } from "lucide-react";
 
@@ -10,14 +10,13 @@ const navItems = [
     { name: "Contact", href: "#contact" },
 ]
 
-
-export const Navbar = () => {
+const NavbarComponent = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.screenY > 10)
+            setIsScrolled(window.scrollY > 10)
         }
 
         window.addEventListener("scroll", handleScroll)
@@ -87,3 +86,5 @@ export const Navbar = () => {
         </nav>
     );
 };
+
+export const Navbar = memo(NavbarComponent);

@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 
 // id, size, x, y, oppacity, animationDuration
 // id, size, x, y, delay, animationDuration
 
-
-export const StarBackground = () => {
+const StarBackgroundComponent = () => {
     const [stars, setStars] = useState([])
     const [meteors, setMeteors] = useState([])
 
@@ -93,3 +92,5 @@ export const StarBackground = () => {
         </div>
     );
 };
+
+export const StarBackground = memo(StarBackgroundComponent);
