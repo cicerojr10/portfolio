@@ -5,11 +5,15 @@ import { Home } from "./pages/Home";
 import Curriculo from "./pages/Curriculo";
 import { Toaster } from "./components/ui/toaster";
 import { ThemeProvider } from "./context/ThemeContext";
+import { Vignette } from "./components/Vignette";
+import { FuturisticGrid } from "./components/FuturisticGrid";
 import './i18n';
 
 function App() {
   return (
     <ThemeProvider>
+      <Vignette />
+      <FuturisticGrid />
       <Toaster />
       <BrowserRouter>
         <Routes>
